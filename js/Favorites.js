@@ -6,20 +6,7 @@ export class Favorites {
 
 
   load() {
-    this.entries = [
-      {
-        login: 'maykbrito',
-        name: 'Mayk Brito',
-        public_repos: '76',
-        followers: '120000'
-      },
-      {
-        login: 'diego3g',
-        name: 'Diego Fernandes',
-        public_repos: '76',
-        followers: '120000'
-      }
-    ]
+    this.entries = JSON.parse(localStorage.getItem('@github-favorites:')) || []
   }
 
   delete(user) {
